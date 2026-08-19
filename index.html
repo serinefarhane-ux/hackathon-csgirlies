@@ -1,136 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Wellify</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="love.png">   
-  </head>
-  <body>
-    <div class="navBar">
-      <nav>
-        <div class="name">
-          <a href="index.html">Wellify</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Wellify</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="love.png">
+</head>
+
+<body>
+
+  <div class="navBar">
+    <nav>
+      <div class="name">
+        <a href="index.html">Wellify</a>
+      </div>
+
+      <div class="dropdown">
+        <a>Education</a>
+        <div class="dropdown-content" id="dropdown1">
+          <a href="education-mental.html">Mental Health</a>
+          <a href="education-physical.html">Physical Health</a>
         </div>
-        <div class="dropdown">
-          <a>Education</a>
-          <div class="dropdown-content" id="dropdown1">
-            <a href="education-mental.html">Mental Health</a>
-            <a href="education-physical.html">Physical Health</a>
-          </div>
+      </div>
+
+      <div class="dropdown">
+        <a>Trackers</a>
+        <div class="dropdown-content" id="dropdown2">
+          <a href="mood-tracker.html">Mood</a>
+          <a href="mindfullness-tracker.html">Mindfullness</a>
+          <a href="health-tracker.html">Health</a>
         </div>
-        <div class="dropdown">
-          <a>Trackers</a>
-          <div class="dropdown-content" id="dropdown2">
-            <a href="mood-tracker.html">Mood</a>
-            <a href="mindfullness-tracker.html">Mindfullness</a>
-            <a href="health-tracker.html">Health</a>
-          </div>
+      </div>
+
+      <a href="planner.html">Planner</a>
+
+      <div class="dropdown">
+        <a>Self Care</a>
+        <div class="dropdown-content" id="dropdown3">
+          <a href="self-care-mental.html">Mental</a>
+          <a href="self-care-physical.html">Physical</a>
         </div>
-        <a href="planner.html">Planner</a>
-        <div class="dropdown">
-          <a>Self Care</a>
-          <div class="dropdown-content" id="dropdown3">
-            <a href="self-care-mental.html">Mental</a>
-            <a href="self-care-physical.html">Physical</a>
-          </div>
-        </div>
-        <a href="kindness-wall.html">Kindness Wall</a>
-      </nav>
-    </div>
-    <h1>Wellify</h1>
-    <div class="image">
-        <img id="unfilteredMind" src="https://r2.stockcake.com/update_image/5c084958-f2a9-4336-afd5-1d9d3eb9ccf3-goapi.png"
-    alt="girl journaling"
-    />
-    </div>
-    <div class="Cat">
-        <div class="index">
-         <h2>Our Mission</h2>
-         <p>Our mission is to help you embody an active role in your lifestyle. Our goal is to help you make intentional choices that lead to a healthy and fulfilling life, whatever that may look like for you. Our website is designed to acknowledge the various emotions that can significantly impact your well-being. We are excited to help create more of a balance between physical and mental health care by encouraging users to practice mindfulness.</p>
-        </div>
-        <div class="index"><h2>Why is this important?</h2>
-            <p>Avoiding conversations and suppressing declining mental health can undermine cognitive development and physical performance.</p>
-        </div>
-        <div class="index">
-            <h2>Why Mindfulness</h2>
-            <p>Those who practice mindfulness often have more control over how their focus is distributed. In a research study, scientists looked to analyze brain activation (via MRI scans) during mindful meditation in people used to practicing mindfulness and those who were completely new to it. In the experienced meditators, the Default Mode Network (a network of brain regions that activates when attention wanders) was less active than in the inexperienced meditators who reported that their attention wandered during the meditation. The researchers ultimately concluded that seasoned meditators tend to have better focus than inexperienced meditators. Our goal is to encourage our users to control their focus by practicing mindfulness regularly.</p>
-        </div>
-        <div class="index">
-         <h2>Our Vision</h2>
-        <p>We hope that people use our product as a substitute for turning to social media for stress relief. Contrary to what many believe, social media can actually exacerbate stress. We hope our product will help users who want a space where they don’t feel pressured to suppress their emotions.</p>
-        </div>
-     replace it with this <section class="newsletter">
-  <h2>Join My Newsletter</h2>
+      </div>
 
-  <form id="newsletterForm">
-    <input
-      type="text"
-      id="newsletterName"
-      name="name"
-      placeholder="Your name"
-      required
-    >
-
-    <input
-      type="email"
-      id="newsletterEmail"
-      name="email"
-      placeholder="Your email"
-      required
-    >
-
-    <button type="submit">Subscribe</button>
-
-    <p id="newsletterMessage"></p>
-  </form>
-</section>
-
-<script>
-const newsletterForm = document.getElementById("newsletterForm");
-const newsletterMessage = document.getElementById("newsletterMessage");
-
-newsletterForm.addEventListener("submit", async function(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("newsletterName").value;
-  const email = document.getElementById("newsletterEmail").value;
-
-  newsletterMessage.textContent = "Signing you up...";
-
-  const formData = new URLSearchParams();
-  formData.append("name", name);
-  formData.append("email", email);
-
-  try {
-    const response = await fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
-      method: "POST",
-      body: formData
-    });
-
-    const result = await response.text();
-
-    if (result === "success") {
-      newsletterMessage.textContent = "You're subscribed! 💜";
-      newsletterForm.reset();
-    } else {
-      newsletterMessage.textContent = "Something went wrong. Please try again.";
-    }
-  } catch (error) {
-    newsletterMessage.textContent = "Something went wrong. Please try again.";
-  }
-});
-</script>    <footer class="site-footer">
-  <div class="footer-content">
-    <h2>Wellify 💜</h2>
-    <p>Take care of your mind, body, and wellbeing.</p>
-
-    <a href="meet-the-team.html" class="team-link">Meet the Team →</a>
-
-    <p class="footer-small"> Made with 💜 by the Wellify team</p>
+      <a href="kindness-wall.html">Kindness Wall</a>
+    </nav>
   </div>
-</footer>
-  </body>
+
+  <h1>Wellify</h1>
+
+  <div class="image">
+    <img
+      id="unfilteredMind"
+      src="https://r2.stockcake.com/update_image/5c084958-f2a9-4336-afd5-1d9d3eb9ccf3-goapi.png"
+      alt="girl journaling"
+    />
+  </div>
+
+  <div class="Cat">
+
+    <div class="index">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to help you embody an active role in your lifestyle.
+        Our goal is to help you make intentional choices that lead to a
+        healthy and fulfilling life, whatever that may look like for you.
+        Our website is designed to acknowledge the various emotions that
+        can significantly impact your well-being. We are excited to help
+        create more of a balance between physical and mental health care
+        by encouraging users to practice mindfulness.
+      </p>
+    </div>
+
+    <div class="index">
+      <h2>Why is this important?</h2>
+      <p>
+        Avoiding conversations and suppressing declining mental health can
+        undermine cognitive development and physical performance.
+      </p>
+    </div>
+
+    <div class="index">
+      <h2>Why Mindfulness</h2>
+      <p>
+        Those who practice mindfulness often have more control over how
+        their focus is distributed. In a research study, scientists looked
+        to analyze brain activation during mindful meditation in people
+        used to practicing mindfulness and those who were completely new
+        to it. In the experienced meditators, the Default Mode Network was
+        less active than in the inexperienced meditators who reported that
+        their attention wandered during the meditation. The researchers
+        ultimately concluded that seasoned meditators tend to have better
+        focus than inexperienced meditators. Our goal is to encourage our
+        users to control their focus by practicing mindfulness regularly.
+      </p>
+    </div>
+
+    <div class="index">
+      <h2>Our Vision</h2>
+      <p>
+        We hope that people use our product as a substitute for turning
+        to social media for stress relief. Contrary to what many believe,
+        social media can actually exacerbate stress. We hope our product
+        will help users who want a space where they don’t feel pressured
+        to suppress their emotions.
+      </p>
+    </div>
+
+  </div>
+
+  <section class="newsletter">
+    <h2>Join My Newsletter</h2>
+
+    <form id="newsletterForm">
+      <input
+        type="text"
+        id="newsletterName"
+        name="name"
+        placeholder="Your name"
+        required
+      >
+
+      <input
+        type="email"
+        id="newsletterEmail"
+        name="email"
+        placeholder="Your email"
+        required
+      >
+
+      <button type="submit">Subscribe</button>
+
+      <p id="newsletterMessage"></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h2>Wellify 💜</h2>
+      <p>Take care of your mind, body, and wellbeing.</p>
+
+      <a href="meet-the-team.html" class="team-link">
+        Meet the Team →
+      </a>
+
+      <p class="footer-small">
+        Made with 💜 by the Wellify team
+      </p>
+    </div>
+  </footer>
+
+</body>
 </html>
