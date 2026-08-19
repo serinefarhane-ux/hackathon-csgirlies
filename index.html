@@ -109,33 +109,29 @@
     </div>
 
   </div>
+change to this in index.html:
+<h1>Wellify 💜</h1>
 
-  <section class="newsletter">
-    <h2>Join My Newsletter</h2>
+    <p>Subscribe to our newsletter!</p>
 
-    <form id="newsletterForm">
-      <input
-        type="text"
-        id="newsletterName"
-        name="name"
-        placeholder="Your name"
-        required
-      >
+    <form id="subscribeForm">
 
-      <input
-        type="email"
-        id="newsletterEmail"
-        name="email"
-        placeholder="Your email"
-        required
-      >
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
 
-      <button type="submit">Subscribe</button>
+        <button type="submit">
+            Subscribe
+        </button>
 
-      <p id="newsletterMessage"></p>
     </form>
-  </section>
 
+    <p id="message"></p>
+
+    <script src="/static/script.js"></script>
   <footer class="site-footer">
     <div class="footer-content">
       <h2>Wellify 💜</h2>
