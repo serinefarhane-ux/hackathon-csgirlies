@@ -21,4 +21,4 @@ jobs:
         EMAIL_USER: ${{ secrets.EMAIL_USER }}
         EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         GITHUB_CLIENT_PAYLOAD: ${{ toJson(github.event.client_payload) }}
-      run: python scripts/send_email.py
+      run: python send_email.py  # <-- Changed this line
