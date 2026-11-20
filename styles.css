@@ -936,9 +936,13 @@ input:hover {
   gap:110px;
   padding:50px;
 }
+.footerinner p{
+  border: none;
+}
 .footer a{
   text-decoration: none;
   transition: 0.3s ease;
+  border: none;
 }
 .footer a:hover{
 color:var(--nav-text);
