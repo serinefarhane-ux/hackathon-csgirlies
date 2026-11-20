@@ -961,6 +961,7 @@ color:var(--nav-text);
 .mao a{
   color:var(--nav-text-muted);
   text-decoration:underline;
+  border:none;
 }
 
 .book{
