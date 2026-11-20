@@ -939,6 +939,9 @@ input:hover {
 .footerinner p{
   border: none;
 }
+.footerinner h3{
+border: none;
+}
 .footer a{
   text-decoration: none;
   transition: 0.3s ease;
